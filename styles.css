@@ -1,0 +1,41 @@
+body {
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	width:100%;
+	height:500px;
+}
+header {
+	width:100%;
+	background-color: #404041;
+	text-align: center;
+	height:100px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	justify-content: space-around;
+}
+
+main {
+	display:flex;
+}
+
+.title h1 {
+	color:#DD1972;
+	margin-bottom: 0;
+}
+
+.title-span {
+	font-weight:200;
+}
+
+.tile h4 {
+	margin-top: 0;
+}
+
+.section-left {
+	flex:1;
+}
+
+.section-right {
+	flex:1;
+}
