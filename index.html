@@ -12,9 +12,9 @@
       <h4>ULTIMATE CHALLENGER EDITION</h4>
     </div>
   </header>
-  <section>
+  <section class="section-left">
     <div class="container-range">
-      <p class="small-title-one">Set Range</p>
+      <h6 class="small-title-one">Set Range</h6>
       <p>Min Range</p>
       <form class="set-range-form" action="index.html" method="post">
         <input type="number" name="" value="">
@@ -22,8 +22,50 @@
         <button type="button" name="button">UPDATE</button>
       </form>
     </div>
-  </section>
+  <div class="container-challenger">
+      <p>The Current Range is <span class="min-range">1</span>to<span class="max-range">100</span></p>
+    <form class="challenger-one-form" action="index.html" method="post">
+      <h6 class=small-title-one>Challenger 1</h6>
+      <label for="challenger-one-name">Name</label>
+      <input class="challenger-one-name"type="text" name="" value="">
+      <label for="challenger-one-guess">Guess</label>
+      <input class="challenger-one-guess challenger-guess" type="text" name="" value="">
+    </form>
+    <form class="challenger-two-form" action="index.html" method="post">
+      <h6 class=small-title-one>Challenger 2</h6>
+      <label for="challenger-two-name">Name</label>
+      <input class="challenger-two-name"type="text" name="" value="">
+      <label for="challenger-two-guess">Guess</label>
+      <input class="challenger-two-guess challenger-guess" type="text" name="" value="">
+    </form>
+    <fieldset class="buttons">
+    <button type="button" name="button">SUBMIT GUESS</button>
+    <button type="button" name="button">RESET GAME</button>
+    <button type="button" name="button">CLEAR GAME</button>
+    </fieldset>
+  </div>
+  <div class="container-score">
+    <h6 class="small-title-one"></h6>
+    <article class="challenger-one-score">
+      <h5 class="small-title-two">Challenger 1 Name</h5>
+      <p>current guess</p>
+      <h1 class="current-guess-one">97</h1>
+      <p>thats too high</p>
+    </article>
+    <article class="challenger-two-score">
+      <h5 class="small-title-two">Challenger 2 Name</h5>
+      <p>current guess</p>
+      <h1 class="current-guess-two">97</h1>
+      <p>thats too low</p>
+    </article>
+  </div>
+</section>
+<section class="section-right">
+  <div class="card-one">
+    
 
+  </div>
+</section>
 
   </body>
 </html>
