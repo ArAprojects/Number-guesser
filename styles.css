@@ -21,7 +21,6 @@ main {
 
 .title h1 {
 	color:#DD1972;
-	margin-bottom: 0;
 }
 
 .title-span {
@@ -29,13 +28,38 @@ main {
 }
 
 .tile h4 {
-	margin-top: 0;
+
 }
 
 .section-left {
 	flex:1;
+	width:50%;
+	background-color:#F7F7F7;
 }
 
 .section-right {
 	flex:1;
+	width:50%;
+	background-color: #D0D2D3;
 }
+
+.container-range {
+	background-color: #FFF;
+	border:1px solid gray;
+	display:flex;
+	align-items: center;
+}
+
+.min-range-form {
+	flex:1;
+}
+
+.max-range-form {
+	flex:1;
+
+}
+
+.button-range-form {
+	flex:1;
+}
+
