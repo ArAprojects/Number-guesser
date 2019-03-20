@@ -1,8 +1,12 @@
+*  {
+	margin: 0;
+}
+
 body {
 	box-sizing: border-box;
 	font-family: 'Open Sans', sans-serif;
 	width:100%;
-	height:500px;
+
 }
 header {
 	width:100%;
@@ -27,14 +31,15 @@ main {
 	font-weight:200;
 }
 
-.tile h4 {
-
+.title h4 {
+	color: #FFF;
 }
+
 
 .section-left {
 	flex:1;
 	width:50%;
-	background-color:#F7F7F7;
+	background-color: #f2f2f3;
 }
 
 .section-right {
@@ -47,19 +52,71 @@ main {
 	background-color: #FFF;
 	border:1px solid gray;
 	display:flex;
-	align-items: center;
+	align-items: flex-end;
+	margin: 15px;
+}
+
+Input {
+	height: 35px;
+	border: 1px solid gray;
+	padding: 0;
+	width: 90%
+}
+
+Button {
+	height: 35px;
+	background-color: #6E6E6E;
+	border-radius: 30%;
 }
 
 .min-range-form {
-	flex:1;
+	flex:2;
+	margin: 15px;
+	margin-right: 0px;
 }
 
 .max-range-form {
-	flex:1;
+	flex:2;
+	align-items: flex-end;
+	margin: 15px;
 
 }
 
 .button-range-form {
 	flex:1;
+	margin: 15px;
 }
 
+.button-range-form button {
+	width: 100%;
+	color: white;
+	font-size: 20px;
+}
+
+.container-challenger {
+	background-color: #FFF;
+	border:1px solid gray;
+	display:flex;
+	flex-direction: column;
+	margin: 15px;
+}
+
+.challenger-one-article {
+	display: flex;
+	align-items: flex-end;
+	margin: 15px;
+}
+
+.challenger-two-article {
+	display: flex;
+	align-items: flex-end;
+	margin: 15px;
+}
+
+.name-form {
+	flex: 2;
+}
+
+.guess-form {
+	flex: 1;
+}
