@@ -34,10 +34,10 @@
       </form>
     </div>
 <div class="container-challenger">
-  <p>The Current Range is <span class="min-range">1</span>to<span class="max-range">100</span></p>
+  <p class="player-range">The Current Range is <span class="min-range">1 </span>to<span class="max-range"> 100</span></p>
   <article class="challenger-one-article">
     <form class="name-form" action="index.html" method="post">
-      
+
       <h6 class=small-title-one>Challenger 1</h6>
       <p for="challenger-one-name">Name</p>
       <input class="challenger-one-name"type="text" name="" value="">
@@ -59,24 +59,25 @@
       <input class="challenger-two-guess challenger-guess" type="text" name="" value="">
     </form>
   </article>
+  <form class="buttons">
+    <button type="button" name="button">SUBMIT GUESS</button>
+    <button type="button" name="button">RESET GAME</button>
+    <button type="button" name="button">CLEAR GAME</button>
+  </form>
 </div>
-  <fieldset class="buttons">
-  <button type="button" name="button">SUBMIT GUESS</button>
-  <button type="button" name="button">RESET GAME</button>
-  <button type="button" name="button">CLEAR GAME</button>
-  </fieldset>
+
   <div class="container-score">
     <h6 class="small-title-one"></h6>
     <article class="challenger-one-score">
       <h5 class="small-title-challenger-one">Challenger 1 Name</h5>
       <p>current guess</p>
-      <h1 class="current-guess-one">97</h1>
+      <h1 class="current-guess current-guess-one">97</h1>
       <p>thats too high</p>
     </article>
     <article class="challenger-two-score">
       <h5 class="small-title-challenger-two">Challenger 2 Name</h5>
       <p>current guess</p>
-      <h1 class="current-guess-two">97</h1>
+      <h1 class="current-guess current-guess-two">97</h1>
       <p>thats too low</p>
     </article>
   </div>

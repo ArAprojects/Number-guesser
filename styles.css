@@ -66,7 +66,9 @@ Input {
 Button {
 	height: 35px;
 	background-color: #6E6E6E;
-	border-radius: 30%;
+	border-radius: 30px;
+	flex: 1;
+	margin: 5px;
 }
 
 .min-range-form {
@@ -119,4 +121,29 @@ Button {
 
 .guess-form {
 	flex: 1;
+}
+
+.small-title-one {
+	font-size: 20px;
+}
+
+.buttons {
+	display: flex;
+	margin: 15px;
+}
+
+.player-range {
+	margin: 15px;
+}
+
+.container-score {
+	background-color: #FFF;
+	border:1px solid gray;
+	display:flex;
+	flex-direction: row;
+	margin: 15px;
+}
+
+.current-guess {
+	font-size: 80px;
 }
