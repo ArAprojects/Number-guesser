@@ -1,10 +1,13 @@
+
 * {
 	margin:0;
 }
+
 body {
 	box-sizing: border-box;
 	font-family: 'Open Sans', sans-serif;
 	width:100%;
+
 }
 header {
 	width:100%;
@@ -37,14 +40,14 @@ main {
 	font-weight:200;
 }
 
-.tile h4 {
-
+.title h4 {
+	color: #FFF;
 }
 
 .section-left {
 	flex:1;
 	width:50%;
-	background-color:#F7F7F7;
+	background-color: #f2f2f3;
 }
 
 .section-right {
@@ -57,20 +60,99 @@ main {
 	background-color: #FFF;
 	border:1px solid gray;
 	display:flex;
-	align-items: center;
+	align-items: flex-end;
+	margin: 15px;
+}
+
+Input {
+	height: 35px;
+	border: 1px solid gray;
+	padding: 0;
+	width: 90%
+}
+
+Button {
+	height: 35px;
+	background-color: #6E6E6E;
+	border-radius: 30px;
+	flex: 1;
+	margin: 5px;
 }
 
 .min-range-form {
-	flex:1;
+	flex:2;
+	margin: 15px;
+	margin-right: 0px;
 }
 
 .max-range-form {
-	flex:1;
-
+	flex:2;
+	align-items: flex-end;
+	margin: 15px;
 }
 
 .button-range-form {
 	flex:1;
+	margin: 15px;
+}
+
+.button-range-form button {
+	width: 100%;
+	color: white;
+	font-size: 20px;
+}
+
+.container-challenger {
+	background-color: #FFF;
+	border:1px solid gray;
+	display:flex;
+	flex-direction: column;
+	margin: 15px;
+}
+
+.challenger-one-article {
+	display: flex;
+	align-items: flex-end;
+	margin: 15px;
+}
+
+.challenger-two-article {
+	display: flex;
+	align-items: flex-end;
+	margin: 15px;
+}
+
+.name-form {
+	flex: 2;
+}
+
+.guess-form {
+	flex: 1;
+}
+
+.small-title-one {
+	font-size: 20px;
+}
+
+.buttons {
+	display: flex;
+	margin: 15px;
+}
+
+.player-range {
+	margin: 15px;
+}
+
+.container-score {
+	background-color: #FFF;
+	border:1px solid gray;
+	display:flex;
+	flex-direction: row;
+	margin: 15px;
+}
+
+.current-guess {
+	font-size: 80px;
 }
 
 .card-one  {
@@ -110,7 +192,6 @@ main {
 	padding-bottom:10px;
 	padding-top:10px;
 	color:#6E6E6E;
-
 }
 
 .versus {
@@ -127,7 +208,6 @@ main {
 	font-weight:800;
 	color:#6E6E6E;
 	font-size:30px;
-
 }
 
 .card-winner {
@@ -154,5 +234,6 @@ main {
 	border-radius: 50%;
 	background-color:#6E6E6E;
 }
+
 
 
