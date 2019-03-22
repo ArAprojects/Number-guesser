@@ -12,7 +12,6 @@ header {
 	width:100%;
 	background-color: #404041;
 	text-align: center;
-	height:100px;
 	display:flex;
 	justify-content: center;
 	align-items: center;
@@ -20,19 +19,42 @@ header {
 }
 
 h1 {
-	font-size:50px;
+	font-size:80px;
+	font-weight: 700;
+	color:#f74D9B;;
+	margin-bottom: 0;
 }
 
 h4 {
-	color:white;
+ overflow: hidden;
+ text-align: center;
+ font-size: 25px;
+ color: white;
+ margin-bottom: 20px;
+ font-weight: lighter;
+}
+
+h4:before,
+h4:after {
+ background-color: white;
+ content: "";
+ display: inline-block;
+ height: 2px;
+ position: relative;
+ vertical-align: middle;
+ width: 50%;
+}
+h4:before {
+ right: 0.5em;
+ margin-left: -50%;
+}
+h4:after {
+ left: 0.5em;
+ margin-right: -50%;
 }
 
 main {
 	display:flex;
-}
-
-.title h1 {
-	color:#DD1972;
 }
 
 .title-span {
@@ -43,6 +65,7 @@ main {
 	color: #FFF;
 }
 
+/* ---------Main---------- */
 
 .section-left {
 	flex:1;
@@ -71,14 +94,6 @@ Input {
 	width: 90%
 }
 
-Button {
-	height: 35px;
-	background-color: #6E6E6E;
-	border-radius: 30px;
-	flex: 1;
-	margin: 5px;
-}
-
 .min-range-form {
 	flex:2;
 	margin: 15px;
@@ -89,7 +104,6 @@ Button {
 	flex:2;
 	align-items: flex-end;
 	margin: 15px;
-
 }
 
 .button-range-form {
@@ -97,11 +111,19 @@ Button {
 	margin: 15px;
 }
 
-.button-range-form button {
+.section-left button {
 	width: 100%;
 	color: white;
 	font-size: 20px;
+	font-weight: 500;
+	height: 35px;
+	background-color: #6E6E6E;
+	border-radius: 30px;
+	flex: 1;
+	margin: 5px;
 }
+
+
 
 .container-challenger {
 	background-color: #FFF;
@@ -133,7 +155,9 @@ Button {
 }
 
 .small-title-one {
-	font-size: 20px;
+	font-size: 25px;
+	color: #404041;
+	font-weight: 700;
 }
 
 .buttons {
@@ -151,11 +175,39 @@ Button {
 	display:flex;
 	flex-direction: row;
 	margin: 15px;
+	justify-content: center;
+	align-items: flex-end;
 }
 
 .current-guess {
 	font-size: 80px;
+	color: #DD1972;
 }
+
+.challenger-one-score {
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+}
+
+
+
+.challenger-two-score {
+	flex-direction: column;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	flex: 1;
+}
+
+.section-left p {
+	font-size: 20px;
+	color: #6E6E6E;
+}
+
+/* --------right-section------- */
 
 .card-one  {
 	border:1px solid black;
