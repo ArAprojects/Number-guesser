@@ -19,30 +19,7 @@ var resetGame4Real = document.querySelector(".reset-button")
 
 
 
-updateButton.addEventListener("click", updateRange); //Come back to
 
-/*function updateRange() {
-	if (maxInput.value === ""  || minInput.value === "") {
-		updateButton.disabled = true;
-	} else {
-		updateButton.disabled = false;
-		minInputDisplay.textContent = minInput.value;
-		maxInputDisplay.textContent = maxInput.value;
-	}
-
-	
-};*/
-
-function updateRange(e) {
-	e.preventDefault(e);
-	if (maxInput.value. > -1 && minInput.value. > -1) {
-		updateButton.disabled = false;
-		console.log(minInput.value)
-
-	}
-	minInputDisplay.textContent = minInput.value;
-		maxInputDisplay.textContent = maxInput.value;
-}
 
 
 button.addEventListener("click", updateChallengerNamesAndGuess); // This gets user names and guesses
@@ -61,7 +38,6 @@ button.addEventListener("click", createRandomNumber); // This creates a random n
 
 function createRandomNumber(e) {
 	e.preventDefault(e);
-	newNumberGenerated = Math.floor(Math.random() * (+maxInput.value - +minInput.value)) + +minInput.value;
 }
 
 
@@ -97,6 +73,18 @@ function resetCurrentGame(e) {
 	document.getElementsByClassName("container-challenger").innerHTML = "";
 	}
 
+
+updateButton.addEventListener("click", updateRange); //Come back to
+
+
+function updateRange(e) {
+	e.preventDefault(e)
+	minInputDisplay.textContent = minInput.value;
+	maxInputDisplay.textContent = maxInput.value;
+	newNumberGenerated = Math.floor(Math.random() * (+maxInput.value - +minInput.value)) + +minInput.value;
+	console.log(newNumberGenerated)
+
+}
 
 
 
