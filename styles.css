@@ -16,6 +16,8 @@ header {
 	justify-content: center;
 	align-items: center;
 	justify-content: space-around;
+	border: 2px solid #6E6E6E;
+	border-bottom: none;
 }
 
 h1 {
@@ -78,6 +80,9 @@ main {
 	flex:1;
 	width:50%;
 	background-color: #D0D2D3;
+	border: 2px solid #6E6E6E;
+	border-top: none;
+	border-bottom: none;
 }
 
 .container-range {
@@ -176,6 +181,8 @@ Input {
 	margin: 20px;
 	justify-content: center;
 	align-items: flex-end;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
  .container-score h5 {
@@ -193,6 +200,7 @@ Input {
 	align-items: center;
 	justify-content: center;
 	flex: 1;
+	border-right: 2px solid #D0D2D3;
 }
 
 .container-score-title {
@@ -305,4 +313,6 @@ Input {
 .clear-card {
 	border-radius: 50%;
 	background-color:#6E6E6E;
+	font-size: 18px;
+	color: #D0D2D3;
 }
