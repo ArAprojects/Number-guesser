@@ -1,3 +1,4 @@
+
 var updateButton = document.querySelector(".update-button");
 var minInputDisplay = document.querySelector(".min-range");
 var maxInputDisplay = document.querySelector(".max-range");
@@ -85,24 +86,6 @@ function updateRange(e) {
 	console.log(newNumberGenerated)
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
