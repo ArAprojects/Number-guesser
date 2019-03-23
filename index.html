@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,400,500,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:lighter,100,200,400,500,600,700,800" rel="stylesheet">
    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,21 +14,20 @@
       <h4>ULTIMATE CHALLENGER EDITION</span></h4>
     </div>
   </header>
-
   <main>
   <section class="section-left">
     <div class="container-range">
       <form class="min-range-form" action="index.html" method="post">
         <h3 class="small-title-one">Set Range</h3>
         <p>Min Range</p>
-        <input type="number" name="" value="">
+        <input class="min-range-input" type="number" name="" value="">
       </form>
       <form class = "max-range-form">
         <p>Max Range</p>
-        <input type="number" name="" value="">
+        <input class="max-range-input" type="number" name="" value="">
       </form>
       <form class="button-range-form">
-        <button type="button" name="button">UPDATE</button>
+        <button class="update-button" type="button" name="button">UPDATE</button>
       </form>
     </div>
 <div class="container-challenger">
@@ -58,15 +57,17 @@
     </form>
   </article>
   <form class="buttons">
-    <button type="button" name="button">SUBMIT GUESS</button>
-    <button type="button" name="button">RESET GAME</button>
-    <button type="button" name="button">CLEAR GAME</button>
+    <button class="submit-button" type="button" name="button">SUBMIT GUESS</button>
+    <button class="reset-button" type="button" name="button">RESET GAME</button>
+    <button class="clear-button" type="button" name="button">CLEAR GAME</button>
   </form>
 </div>
 
   <div class="container-score">
-    <h6 class="small-title-one"></h6>
     <article class="challenger-one-score">
+      <div class="container-score-title">
+      <h6 class="small-title-one">Latest Score</h6>
+      </div>
       <h5 class="small-title-challenger-one">Challenger 1 Name</h5>
       <p>current guess</p>
       <h1 class="current-guess current-guess-one">97</h1>
@@ -89,6 +90,7 @@
       <h5 class="small-title-challenger-one">CHALLENGER 1 NAME</h5>
       <p class= "versus">VS</p>
       <h5 class="small-title-challenger-two">CHALLENGER 2 NAME</h5>
+
     </div>
     <div class="challenger-status">
       <h3 class="winner">CHALLENGER 2 'NAME'</h3>
@@ -134,5 +136,6 @@
   </article>
 </section>
 </main>
+<script src="main.js"></script>
   </body>
 </html>
