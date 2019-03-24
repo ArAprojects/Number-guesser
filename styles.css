@@ -101,6 +101,10 @@ Input {
 	width: 90%
 }
 
+.red-box {
+	border: 2px solid red;
+}
+
 .min-range-form {
 	flex:2;
 	margin: 15px;
@@ -231,6 +235,19 @@ Input {
 	font-size: 20px;
 	color: #6E6E6E;
 }
+
+
+#error {
+	font-size: 10px;
+	color: red;
+	margin-bottom: -15px;
+}
+
+.hidden {
+	display: none;
+}
+
+
 
 /* --------right-section------- */
 

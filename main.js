@@ -19,7 +19,7 @@ var tooHighOrLow2 = document.querySelector(".high-or-low-2");
 var resetInputs = document.querySelector(".container-challenger");
 var resetGame4Real = document.querySelector(".reset-button");
 var declaredWinner = document.querySelector(".winner");
-
+var errorMessage = document.querySelector("#error")
 var right = document.querySelector(".section-right");
 
 right.addEventListener('click', function(e) {
@@ -29,15 +29,28 @@ right.addEventListener('click', function(e) {
   // if(e.target.className)
 });
 
-minInput.addEventListener("keyup", validate);
-maxInput.addEventListener("keyup", validate);
-  function validate(e) {
-    if (minInput.value === "" || maxInput.value === "") {
+minInput.addEventListener("keyup", validateRange);
+maxInput.addEventListener("keyup", validateRange);
+  function validateRange(e) {
+    if (minInput.value === "" || maxInput.value === "" || minInput.value > maxInput.value) {
       updateButton.setAttribute("disabled", "disabled");
     } else {
       updateButton.removeAttribute("disabled");
     }
   }
+
+  minInput.addEventListener("mouseout", error);
+  function error(e) {
+    if (minInput.value === "") {
+      minInput.classList.add("red-box");
+      errorMessage.classList.remove("hidden");
+    }
+    else {
+      minInput.classList.remove("red-box")
+      errorMessage.classList.add("hidden");
+    }
+  }
+
 
 
 
