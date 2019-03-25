@@ -22,12 +22,17 @@ var declaredWinner = document.querySelector(".winner");
 var errorMessage = document.querySelector("#error")
 var right = document.querySelector(".section-right");
 
+
+// ------------clear-right-side-cards-one-by-one-------------------
+
 right.addEventListener('click', function(e) {
   if (e.target.className === 'clear-card') {
     e.target.closest('.card').remove();
   }
   // if(e.target.className)
 });
+
+// ---------validation and error messages---------
 
 minInput.addEventListener("keyup", validateRange);
 maxInput.addEventListener("keyup", validateRange);
@@ -39,14 +44,17 @@ maxInput.addEventListener("keyup", validateRange);
     }
   }
 
+  maxInput.addEventListener("mouseout", error);
   minInput.addEventListener("mouseout", error);
-  function error(e) {
+  function error() {
     if (minInput.value === "") {
       minInput.classList.add("red-box");
+      maxInput.classList.add("red-box")
       errorMessage.classList.remove("hidden");
     }
     else {
       minInput.classList.remove("red-box")
+      maxInput.classList.remove("red-box")
       errorMessage.classList.add("hidden");
     }
   }
@@ -105,14 +113,15 @@ resetGame4Real.addEventListener("click", resetCurrentGame);
 function resetCurrentGame(e) {
     document.getElementsByClassName("container-challenger").innerHTML = "";
     }
-updateButton.addEventListener("click", updateRange); //Come back to
-function updateRange(e) {
-    e.preventDefault(e)
-    minInputDisplay.textContent = minInput.value;
-    maxInputDisplay.textContent = maxInput.value;
-    newNumberGenerated = Math.floor(Math.random() * (+maxInput.value - +minInput.value)) + +minInput.value;
-    console.log(newNumberGenerated)
-}
+
+// updateButton.addEventListener("click", updateRange); //Come back to
+// function updateRange(e) {
+//     e.preventDefault(e)
+//     minInputDisplay.textContent = minInput.value;
+//     maxInputDisplay.textContent = maxInput.value;
+//     newNumberGenerated = Math.floor(Math.random() * (+maxInput.value - +minInput.value)) + +minInput.value;
+//     console.log(newNumberGenerated)
+// }
 resetGame4Real.addEventListener("click", resetGameInputs) //This will rest all input forms for the game
 
     function resetGameInputs() {
