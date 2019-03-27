@@ -43,63 +43,40 @@ right.addEventListener('click', function(e) {
 //       updateButton.removeAttribute("disabled");
 //     }
 //   }
-  challengerName1.addEventListener("keyup", error3) 
-  updateButton.addEventListener("click", error, error2);
-  maxInput.addEventListener("keyup", error2);
-  minInput.addEventListener("keyup", error);
-  function error() {
-    if (minInput.value === "") {
+
+
+  minInput.addEventListener("keyup", inputError);
+  maxInput.addEventListener("keyup", inputError2)
+  function inputError() {
+    if (minInput.value === "" || parseInt(maxInput.value) < parseInt(minInput.value)) {
       minInput.classList.add("red-box");
-      errorMessage.classList.remove("hidden")
+      errorMessage.classList.remove("hidden");
       updateButton.setAttribute("disabled", "disabled");
     }
-    else if (minInput.value >= maxInput.value) {
+    else {
+      minInput.classList.remove("red-box");
+      errorMessage.classList.add("hidden");
+      updateButton.removeAttribute("disabled");
+    }
+  }
+
+  function inputError2() {
+    if (maxInput.value === "" || parseInt(maxInput.value) < parseInt(minInput.value)) {
       maxInput.classList.add("red-box");
       errorMessage1.classList.remove("hidden")
       updateButton.setAttribute("disabled", "disabled");
     }
     else {
-      minInput.classList.remove("red-box")
-      errorMessage.classList.add("hidden")
+      maxInput.classList.remove("red-box");
+      errorMessage1.classList.add("hidden");
       updateButton.removeAttribute("disabled");
+
     }
   }
 
-  function error2() {
-    if (maxInput.value === "" ) {
-      maxInput.classList.add("red-box");
-      errorMessage1.classList.remove("hidden");
-      updateButton.setAttribute("disabled", "disabled");
-    }
-    else if (minInput.value >= maxInput.value) {
-      maxInput.classList.add("red-box");
-      errorMessage1.classList.remove("hidden");
-      updateButton.setAttribute("disabled", "disabled");
-    }
-    else {
-      maxInput.classList.remove("red-box")
-      errorMessage1.classList.add("hidden");
-      updateButton.removeAttribute("disabled");
-    }
-  }
 
-  function error3() {
-    if (challengerName1.value === "" ) {
-      challengerName1.classList.add("red-box");
-      errorMessage2.classList.remove("hidden");
-      submitButton.setAttribute("disabled", "disabled");
-    }
-    if (challengerName2.value === "" ) {
-      challengerName2.classList.add("red-box");
-      errorMessage2.classList.remove("hidden");
-      submitButton.setAttribute("disabled", "disabled");
-    }
-    else {
-      maxInput.classList.remove("red-box")
-      errorMessage1.classList.add("hidden");
-      submitButton.removeAttribute("disabled");
-    }
-  }
+
+
 
 
 
@@ -112,8 +89,8 @@ right.addEventListener('click', function(e) {
 updateButton.addEventListener("click", updateRange); //Come back to
 function updateRange(e) {
     e.preventDefault(e)
-    minInputDisplay.textContent = minInput.value;
-    maxInputDisplay.textContent = maxInput.value;
+    minInputDisplay.textContent = minInput.value || 1;
+    maxInputDisplay.textContent = maxInput.value || 100;
     newNumberGenerated = Math.floor(Math.random() * (+maxInput.value - +minInput.value)) + +minInput.value;
     console.log(newNumberGenerated)
 }
@@ -253,7 +230,7 @@ function createCard1() {
   //insert adjacent html to get it in
 }
 
-submitButton.addEventListener("click", determineWinner); 
+submitButton.addEventListener("click", determineWinner);
 function determineWinner () {
   if (player2Guess.value == newNumberGenerated) {
     createCard2();
@@ -264,8 +241,3 @@ function determineWinner () {
   }
 
 }
-
-
-
- 
-
