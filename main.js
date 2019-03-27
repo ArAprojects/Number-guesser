@@ -71,12 +71,98 @@ function tooHighOrLow3(e) {
 resetGame4Real.addEventListener("click", resetCurrentGame);
 
 function resetCurrentGame(e) {
+<<<<<<< javascript
 	document.getElementsByClassName("container-challenger").innerHTML = "";
 	}
 
+=======
+    document.getElementsByClassName("container-challenger").innerHTML = "";
+    }
+
+ /*updateButton.addEventListener("click", updateRange); //Come back to
+ function updateRange(e) {
+     e.preventDefault(e)
+     minInputDisplay.textContent = minInput.value;
+     maxInputDisplay.textContent = maxInput.value;
+   newNumberGenerated = Math.floor(Math.random() * (+maxInput.value - +minInput.value)) + +minInput.value;
+     console.log(newNumberGenerated)
+ }*/
+resetGame4Real.addEventListener("click", resetGameInputs) //This will rest all input forms for the game
+
+    function resetGameInputs() {
+    document.querySelector(".challenger-one-name").value = "";
+    document.querySelector(".challenger-two-name").value = "";
+    document.querySelector(".challenger-one-guess").value = "";
+    document.querySelector(".challenger-two-guess").value = "";
+    document.querySelector(".min-range-input").value = "";
+    document.querySelector(".max-range-input").value = "";
+    document.querySelector(".small-title-challenger-one").textContent = "Challenger 1 Name";
+    document.querySelector(".small-title-challenger-two").textContent = "Challenger 2 Name";
+    document.querySelector(".current-guess-one").textContent = "#";
+    document.querySelector(".current-guess-two").textContent = "#";
+    document.querySelector(".high-or-low-1").textContent = "Pending Guess...";
+    document.querySelector(".high-or-low-2").textContent = "Pending Guess...";
+    document.querySelector("")
+    }
+
+
+
+
+
+// submitButton.addEventListener('click', createCard2);
+
+function createCard2() {
+  right.innerHTML = `
+<article class="card card-one">
+    <div class="challenger-names">
+      <h5 class="small-title-challenger-one-instance-two">${challengerName1.value}</h5>
+      <p class= "versus">VS</p>
+      <h5 class="small-title-challenger-two small-title-challenger-two-instance-two">${challengerName2.value}</h5>
+    </div>
+    <div class="challenger-status">
+      <h3 class="winner">${challengerName2.value}</h3>
+      <h3 class = "card-winner">WINNER</h3>
+    </div>
+    <div class="guesses-timer-clear">
+      <p><span class="number-of-guesses"></span>GUESSES</p>
+      <p><span class="time-to-guess-correct"></span>MINUTES</p>
+      <button class="clear-card" type="button" name="button">X</button>
+    </div>
+</article>
+
+  ` + right.innerHTML;
+}
+
+// submitButton.addEventListener('click', createCard1);
+
+function createCard1() {
+  // assign card to the html
+  right.innerHTML =`
+<article class="card card-one">
+    <div class="challenger-names">
+      <h5 class="small-title-challenger-one-instance-two">${challengerName1.value}</h5>
+      <p class= "versus">VS</p>
+      <h5 class="small-title-challenger-two small-title-challenger-two-instance-two">${challengerName2.value}</h5>
+    </div>
+    <div class="challenger-status">
+      <h3 class="winner">${challengerName1.value}</h3>
+      <h3 class = "card-winner">WINNER</h3>
+    </div>
+    <div class="guesses-timer-clear">
+      <p><span class="number-of-guesses"></span>GUESSES</p>
+      <p><span class="time-to-guess-correct"></span>MINUTES</p>
+      <button class="clear-card" type="button" name="button">X</button>
+    </div>
+</article>
+
+  ` + right.innerHTML;
+  //insert adjacent html to get it in
+}
+>>>>>>> local
 
 updateButton.addEventListener("click", updateRange); //Come back to
 
+<<<<<<< javascript
 
 function updateRange(e) {
 	e.preventDefault(e)
@@ -85,6 +171,19 @@ function updateRange(e) {
 	newNumberGenerated = Math.floor(Math.random() * (+maxInput.value - +minInput.value)) + +minInput.value;
 	console.log(newNumberGenerated)
 
+=======
+submitButton.addEventListener("click", determineWinner); 
+
+function determineWinner () {
+
+  if (player2Guess.value == newNumberGenerated) {
+    createCard2();
+  } else if (player1Guess.value == newNumberGenerated) {
+    createCard1();
+  } else {
+    console.log("puppy")
+  }
+>>>>>>> local
 }
 
 
