@@ -1,5 +1,4 @@
 
-
 var updateButton = document.querySelector(".update-button");
 var minInputDisplay = document.querySelector(".min-range");
 var maxInputDisplay = document.querySelector(".max-range");
@@ -20,6 +19,7 @@ var resetInputs = document.querySelector(".container-challenger");
 var resetGame4Real = document.querySelector(".reset-button");
 var declaredWinner = document.querySelector(".winner");
 var errorMessage = document.querySelector("#error")
+var errorMessage1 = document.querySelector("#error-1")
 var right = document.querySelector(".section-right");
 
 
@@ -34,30 +34,77 @@ right.addEventListener('click', function(e) {
 
 // ---------validation and error messages---------
 
-minInput.addEventListener("keyup", validateRange);
-maxInput.addEventListener("keyup", validateRange);
-  function validateRange(e) {
-    if (minInput.value === "" || maxInput.value === "" || minInput.value > maxInput.value) {
+// minInput.addEventListener("keyup", validateRange);
+// maxInput.addEventListener("keyup", validateRange);
+//   function validateRange(e) {
+//     if (minInput.value === "" || maxInput.value === "" || minInput.value > maxInput.value) {
+//       updateButton.setAttribute("disabled", "disabled");
+//     } else {
+//       updateButton.removeAttribute("disabled");
+//     }
+//   }
+  challengerName1.addEventListener("keyup", error3")
+  updateButton.addEventListener("click", error, error2);
+  maxInput.addEventListener("keyup", error2);
+  minInput.addEventListener("keyup", error);
+  function error() {
+    if (minInput.value === "") {
+      minInput.classList.add("red-box");
+      errorMessage.classList.remove("hidden")
       updateButton.setAttribute("disabled", "disabled");
-    } else {
+    }
+    else if (minInput.value >= maxInput.value) {
+      maxInput.classList.add("red-box");
+      errorMessage1.classList.remove("hidden")
+      updateButton.setAttribute("disabled", "disabled");
+    }
+    else {
+      minInput.classList.remove("red-box")
+      errorMessage.classList.add("hidden")
       updateButton.removeAttribute("disabled");
     }
   }
 
-  maxInput.addEventListener("mouseout", error);
-  minInput.addEventListener("mouseout", error);
-  function error() {
-    if (minInput.value === "") {
-      minInput.classList.add("red-box");
-      maxInput.classList.add("red-box")
-      errorMessage.classList.remove("hidden");
+  function error2() {
+    if (maxInput.value === "" ) {
+      maxInput.classList.add("red-box");
+      errorMessage1.classList.remove("hidden");
+      updateButton.setAttribute("disabled", "disabled");
+    }
+    else if (minInput.value >= maxInput.value) {
+      maxInput.classList.add("red-box");
+      errorMessage1.classList.remove("hidden");
+      updateButton.setAttribute("disabled", "disabled");
     }
     else {
-      minInput.classList.remove("red-box")
       maxInput.classList.remove("red-box")
-      errorMessage.classList.add("hidden");
+      errorMessage1.classList.add("hidden");
+      updateButton.removeAttribute("disabled");
     }
   }
+
+  function error3() {
+    if (challengerName1.value === "" ) {
+      challengerName1.classList.add("red-box");
+      errorMessage2.classList.remove("hidden");
+      submitButton.setAttribute("disabled", "disabled");
+    }
+    if (challengerName2.value === "" ) {
+      challengerName2.classList.add("red-box");
+      errorMessage2.classList.remove("hidden");
+      submitButton.setAttribute("disabled", "disabled");
+    }
+    else {
+      maxInput.classList.remove("red-box")
+      errorMessage1.classList.add("hidden");
+      submitButton.removeAttribute("disabled");
+    }
+  }
+
+
+
+
+
 
 
 
