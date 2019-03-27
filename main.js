@@ -43,7 +43,7 @@ right.addEventListener('click', function(e) {
 //       updateButton.removeAttribute("disabled");
 //     }
 //   }
-  challengerName1.addEventListener("keyup", error3")
+  challengerName1.addEventListener("keyup", error3) 
   updateButton.addEventListener("click", error, error2);
   maxInput.addEventListener("keyup", error2);
   minInput.addEventListener("keyup", error);
