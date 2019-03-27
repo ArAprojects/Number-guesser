@@ -415,3 +415,38 @@ Input {
 	border-radius: 50%;
 	background-color:#6E6E6E;
 }
+
+
+@media only screen and (max-width: 952px) {
+  
+
+  .container-range {
+  		align-items:flex-start;
+  		flex-direction:column;
+  
+}
+  .section-left {
+  	background-color:#f2f2f3;
+  	flex:1;
+  }
+
+  .min-range-form {
+  	width:95%;
+  }
+
+  .max-range-form{
+  	width:95%;
+  }
+
+	.section-right {
+		flex:0;
+	}
+
+}
+@media only screen and (max-width: 848px) {
+	
+}
+
+
+
+
