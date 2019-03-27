@@ -4,9 +4,9 @@ var minInputDisplay = document.querySelector(".min-range");
 var maxInputDisplay = document.querySelector(".max-range");
 var minInput = document.querySelector(".min-range-input");
 var maxInput = document.querySelector(".max-range-input");
-var challengerNameUno = document.querySelector(".small-title-challenger-one-instance-one")
+var challengerNameDisplay1 = document.querySelector(".small-title-challenger-one-instance-one")
 var challengerName1 = document.querySelector(".challenger-one-name")
-var challengerNameDos = document.querySelector(".small-title-challenger-two-instance-one");
+var challengerNameDisplay2 = document.querySelector(".small-title-challenger-two-instance-two");
 var challengerName2 = document.querySelector(".challenger-two-name")
 var submitButton = document.querySelector(".submit-button");
 var player1Guess = document.querySelector(".challenger-one-guess");
@@ -16,11 +16,12 @@ var player2CurrentGuess = document.querySelector(".current-guess-two");
 var tooHighOrLow1 = document.querySelector(".high-or-low-1");
 var tooHighOrLow2 = document.querySelector(".high-or-low-2");
 var resetInputs = document.querySelector(".container-challenger");
-var resetGame4Real = document.querySelector(".reset-button");
+var resetTheGame = document.querySelector(".reset-button");
 var declaredWinner = document.querySelector(".winner");
 var errorMessage = document.querySelector("#error")
 var errorMessage1 = document.querySelector("#error-1")
 var right = document.querySelector(".section-right");
+var clearTheGame = document.querySelector(".clear-button")
 
 
 // ------------clear-right-side-cards-one-by-one-------------------
@@ -43,7 +44,7 @@ right.addEventListener('click', function(e) {
 //       updateButton.removeAttribute("disabled");
 //     }
 //   }
-  challengerName1.addEventListener("keyup", error3) 
+  challengerName1.addEventListener("keyup", error3)
   updateButton.addEventListener("click", error, error2);
   maxInput.addEventListener("keyup", error2);
   minInput.addEventListener("keyup", error);
@@ -101,19 +102,11 @@ right.addEventListener('click', function(e) {
     }
   }
 
-
-
-
-
-
-
-
-
 updateButton.addEventListener("click", updateRange); //Come back to
 function updateRange(e) {
     e.preventDefault(e)
-    minInputDisplay.textContent = minInput.value;
-    maxInputDisplay.textContent = maxInput.value;
+    minInputDisplay.textContent = minInput.value
+    maxInputDisplay.textContent = maxInput.value
     newNumberGenerated = Math.floor(Math.random() * (+maxInput.value - +minInput.value)) + +minInput.value;
     console.log(newNumberGenerated)
 }
@@ -122,9 +115,9 @@ submitButton.addEventListener("click", updateChallengerNamesAndGuess); // This g
 function updateChallengerNamesAndGuess(e) {
     e.preventDefault(e);
     challengerName2.textContent = challengerName2.value;
-    challengerNameDos.textContent = challengerName2.textContent;
+    challengerNameDisplay2.textContent = challengerName2.textContent;
     challengerName1.textContent = challengerName1.value
-    challengerNameUno.textContent = challengerName1.textContent;
+    challengerNameDisplay1.textContent = challengerName1.textContent;
     player1CurrentGuess.textContent = player1Guess.value;
     player2CurrentGuess.textContent = player2Guess.value;
 }
@@ -156,11 +149,6 @@ function tooHighOrLow3(e) {
         tooHighOrLow2.textContent = "BOOM!"
     }
 }
-resetGame4Real.addEventListener("click", resetCurrentGame);
-function resetCurrentGame(e) {
-
-    document.getElementsByClassName("container-challenger").innerHTML = "";
-    }
 
  /*updateButton.addEventListener("click", updateRange); //Come back to
  function updateRange(e) {
@@ -180,7 +168,7 @@ function resetCurrentGame(e) {
 //     console.log(newNumberGenerated)
 // }
 
-resetGame4Real.addEventListener("click", resetGameInputs) //This will rest all input forms for the game
+resetTheGame.addEventListener("click", resetGameInputs) //This will rest all input forms for the game
 
     function resetGameInputs() {
     document.querySelector(".challenger-one-name").value = "";
@@ -195,15 +183,19 @@ resetGame4Real.addEventListener("click", resetGameInputs) //This will rest all i
     document.querySelector(".current-guess-two").textContent = "#";
     document.querySelector(".high-or-low-1").textContent = "Pending Guess...";
     document.querySelector(".high-or-low-2").textContent = "Pending Guess...";
-    document.querySelector("")
     }
 
 
+clearTheGame.addEventListener("click", clearGameInputs) 
 
-
-
-
-// submitButton.addEventListener('click', createCard2);
+  function clearGameInputs() {
+    resetGameInputs();
+    newNumberGenerated = Math.floor(Math.random() * (+100 - +0)) + +0;
+      console.log(newNumberGenerated)
+    minInputDisplay.textContent = minInput.value
+    maxInputDisplay.textContent = maxInput.value
+    console.log(newNumberGenerated)
+  }
 
 function createCard2() {
   right.innerHTML = `
@@ -227,8 +219,6 @@ function createCard2() {
   ` + right.innerHTML;
 }
 
-// submitButton.addEventListener('click', createCard1);
-
 function createCard1() {
   // assign card to the html
   right.innerHTML =`
@@ -250,7 +240,6 @@ function createCard1() {
 </article>
 
   ` + right.innerHTML;
-  //insert adjacent html to get it in
 }
 
 submitButton.addEventListener("click", determineWinner); 
