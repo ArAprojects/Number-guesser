@@ -157,9 +157,7 @@ function updateChallengerNamesAndGuess(e) {
 submitButton.addEventListener("click", tooHighOrLow) // This will tell player 1 if there guess is too high or low
 function tooHighOrLow(e) {
     e.preventDefault(e);
-    tooHighOrLow1.textContent = "Keep Guessing!"
-    player1CurrentGuess.textContent = "#"
-    challengerNameDisplay1.textContent = "Challenger 1 Name"
+
     if (player1Guess.value < newNumberGenerated) {
         tooHighOrLow1.textContent = "That's too low"
     } else if (player1Guess.value > newNumberGenerated) {
@@ -171,9 +169,7 @@ function tooHighOrLow(e) {
 submitButton.addEventListener("click", tooHighOrLow3) // This will tell player 2 if their guess is too high or low
 function tooHighOrLow3(e) {
     e.preventDefault(e);
-    tooHighOrLow2.textContent = "Keep Guessing!"
-    player2CurrentGuess.textContent = "#"
-    challengerNameDisplay2.textContent = "Challenger 2 Name"
+
     numbGuess++
     if (player2Guess.value < newNumberGenerated) {
         tooHighOrLow2.textContent = "That's too low"
