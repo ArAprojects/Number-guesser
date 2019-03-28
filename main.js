@@ -25,8 +25,10 @@ var errorMessage3 = document.querySelector("#error-3")
 var errorMessage4 = document.querySelector("#error-4")
 var errorMessage5 = document.querySelector("#error-5")
 var right = document.querySelector(".section-right");
+var trackGuesses = document.querySelector(".number-of-guesses");
 
 var clearTheGame = document.querySelector(".clear-button")
+
 
 
 
@@ -134,12 +136,10 @@ function disabler() {
 updateButton.addEventListener("click", updateRange); //Come back to
 function updateRange(e) {
     e.preventDefault(e)
- alek-javascript
     minInputDisplay.textContent = minInput.value || 1;
     maxInputDisplay.textContent = maxInput.value || 100;
-
-    newNumberGenerated = Math.floor(Math.random() * (+maxInput.value - +minInput.value)) + +minInput.value;
-    console.log(newNumberGenerated)
+    newNumberGenerated = Math.floor(Math.random() * parseInt(maxInput.value) + parseInt(minInput.value)); 
+     console.log(newNumberGenerated)
 }
 
 submitButton.addEventListener("click", updateChallengerNamesAndGuess); // This gets user names and guesses
@@ -201,8 +201,8 @@ clearTheGame.addEventListener("click", clearGameInputs)
 
   function clearGameInputs() {
     resetGameInputs();
-    newNumberGenerated = Math.floor(Math.random() * (+100 - +0)) + +0;
-      console.log(newNumberGenerated)
+    newNumberGenerated = Math.floor(Math.random() * 100 + 1); 
+    //newNumberGenerated = Math.floor(Math.random() * (+100 - +0)) + +0;
     minInputDisplay.textContent = minInput.value
     maxInputDisplay.textContent = maxInput.value
     console.log(newNumberGenerated)
@@ -231,6 +231,7 @@ function createCard2() {
 }
 
 function createCard1() {
+
   // assign card to the html
   right.innerHTML =`
 <article class="card card-one">
@@ -251,6 +252,7 @@ function createCard1() {
 </article>
 
   ` + right.innerHTML;
+
 }
 
 submitButton.addEventListener("click", determineWinner);
@@ -259,8 +261,6 @@ function determineWinner () {
     createCard2();
   } else if (player1Guess.value == newNumberGenerated) {
     createCard1();
-  } else {
-    console.log("puppy")
   }
 
 }
