@@ -26,7 +26,6 @@ var errorMessage4 = document.querySelector("#error-4")
 var errorMessage5 = document.querySelector("#error-5")
 var right = document.querySelector(".section-right");
 var trackGuesses = document.querySelector(".number-of-guesses");
-
 var clearTheGame = document.querySelector(".clear-button")
 var numbGuess = 0
 
@@ -158,6 +157,9 @@ function updateChallengerNamesAndGuess(e) {
 submitButton.addEventListener("click", tooHighOrLow) // This will tell player 1 if there guess is too high or low
 function tooHighOrLow(e) {
     e.preventDefault(e);
+    tooHighOrLow1.textContent = "Keep Guessing!"
+    player1CurrentGuess.textContent = "#"
+    challengerNameDisplay1.textContent = "Challenger 1 Name"
     if (player1Guess.value < newNumberGenerated) {
         tooHighOrLow1.textContent = "That's too low"
     } else if (player1Guess.value > newNumberGenerated) {
@@ -169,7 +171,9 @@ function tooHighOrLow(e) {
 submitButton.addEventListener("click", tooHighOrLow3) // This will tell player 2 if their guess is too high or low
 function tooHighOrLow3(e) {
     e.preventDefault(e);
-
+    tooHighOrLow2.textContent = "Keep Guessing!"
+    player2CurrentGuess.textContent = "#"
+    challengerNameDisplay2.textContent = "Challenger 2 Name"
     numbGuess++
     if (player2Guess.value < newNumberGenerated) {
         tooHighOrLow2.textContent = "That's too low"
@@ -205,7 +209,6 @@ clearTheGame.addEventListener("click", clearGameInputs)
   function clearGameInputs() {
     resetGameInputs();
     newNumberGenerated = Math.floor(Math.random() * 100 + 1); 
-    //newNumberGenerated = Math.floor(Math.random() * (+100 - +0)) + +0;
     minInputDisplay.textContent = minInput.value
     maxInputDisplay.textContent = maxInput.value
     console.log(newNumberGenerated)
@@ -224,7 +227,7 @@ function createCard2() {
       <h3 class = "card-winner">WINNER</h3>
     </div>
     <div class="guesses-timer-clear">
-      <p><span class="number-of-guesses">${numbGuess}</span>GUESSES</p>
+      <p><span class="number-of-guesses">${numbGuess}</span> GUESSES</p>
       <p><span class="time-to-guess-correct"></span>MINUTES</p>
       <button class="clear-card" type="button" name="button">X</button>
     </div>
@@ -235,8 +238,6 @@ function createCard2() {
 }
 
 function createCard1() {
-
-  // assign card to the html
   right.innerHTML =`
 <article class="card card-one">
     <div class="challenger-names">
@@ -249,7 +250,7 @@ function createCard1() {
       <h3 class = "card-winner">WINNER</h3>
     </div>
     <div class="guesses-timer-clear">
-      <p><span class="number-of-guesses"> ${numbGuess} </span>GUESSES</p>
+      <p><span class="number-of-guesses">${numbGuess}</span>  GUESSES</p>
       <p><span class="time-to-guess-correct"></span>MINUTES</p>
       <button class="clear-card" type="button" name="button">X</button>
     </div>
