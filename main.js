@@ -42,13 +42,15 @@ right.addEventListener('click', function(e) {
 
 
 // ---------validation-&-errors----------------//
+  updateButton.addEventListener("click", disabler)
+  submitButton.addEventListener("click", disabler)
   minInput.addEventListener("keyup", inputError1);
   maxInput.addEventListener("keyup", inputError2);
   challengerName1.addEventListener("keyup", nameError1);
   challengerName2.addEventListener("keyup", nameError2);
   player1Guess.addEventListener("keyup", guessError1);
   player2Guess.addEventListener("keyup", guessError2);
-  
+
 
   function inputError1() {
     if (minInput.value === "" || parseInt(maxInput.value) < parseInt(minInput.value)) {
@@ -126,10 +128,12 @@ function guessError2() {
 
 function disabler() {
   if (player1Guess.value === "" || player2Guess.value === "" || challengerName1.value === "" || challengerName2.value=== "") {
-    submitButton.setAttribute("disabled", "disabled");
+    clearTheGame.setAttribute("disabled", "disabled");
+    resetTheGame.setAttribute("disabled", "disabled")
   }
   else{
-    submitButton.removeAttribute("disabled")
+    clearTheGame.removeAttribute("disabled")
+    resetTheGame.removeAttribute("disabled")
   }
 }
 
@@ -197,7 +201,7 @@ resetTheGame.addEventListener("click", resetGameInputs) //This will rest all inp
     }
 
 
-clearTheGame.addEventListener("click", clearGameInputs) 
+clearTheGame.addEventListener("click", clearGameInputs)
 
   function clearGameInputs() {
     resetGameInputs();
