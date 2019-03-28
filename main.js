@@ -20,8 +20,14 @@ var resetTheGame = document.querySelector(".reset-button");
 var declaredWinner = document.querySelector(".winner");
 var errorMessage = document.querySelector("#error")
 var errorMessage1 = document.querySelector("#error-1")
+var errorMessage2 = document.querySelector("#error-2")
+var errorMessage3 = document.querySelector("#error-3")
+var errorMessage4 = document.querySelector("#error-4")
+var errorMessage5 = document.querySelector("#error-5")
 var right = document.querySelector(".section-right");
+
 var clearTheGame = document.querySelector(".clear-button")
+
 
 
 // ------------clear-right-side-cards-one-by-one-------------------
@@ -30,83 +36,108 @@ right.addEventListener('click', function(e) {
   if (e.target.className === 'clear-card') {
     e.target.closest('.card').remove();
   }
-  // if(e.target.className)
 });
 
-// ---------validation and error messages---------
 
-// minInput.addEventListener("keyup", validateRange);
-// maxInput.addEventListener("keyup", validateRange);
-//   function validateRange(e) {
-//     if (minInput.value === "" || maxInput.value === "" || minInput.value > maxInput.value) {
-//       updateButton.setAttribute("disabled", "disabled");
-//     } else {
-//       updateButton.removeAttribute("disabled");
-//     }
-//   }
-  challengerName1.addEventListener("keyup", error3)
-  updateButton.addEventListener("click", error, error2);
-  maxInput.addEventListener("keyup", error2);
-  minInput.addEventListener("keyup", error);
-  function error() {
-    if (minInput.value === "") {
+// ---------validation-&-errors----------------//
+  minInput.addEventListener("keyup", inputError1);
+  maxInput.addEventListener("keyup", inputError2);
+  challengerName1.addEventListener("keyup", nameError1);
+  challengerName2.addEventListener("keyup", nameError2);
+  player1Guess.addEventListener("keyup", guessError1);
+  player2Guess.addEventListener("keyup", guessError2);
+  
+
+  function inputError1() {
+    if (minInput.value === "" || parseInt(maxInput.value) < parseInt(minInput.value)) {
+
       minInput.classList.add("red-box");
-      errorMessage.classList.remove("hidden")
+      errorMessage.classList.remove("hidden");
       updateButton.setAttribute("disabled", "disabled");
     }
-    else if (minInput.value >= maxInput.value) {
+    else {
+      minInput.classList.remove("red-box");
+      errorMessage.classList.add("hidden");
+      updateButton.removeAttribute("disabled");
+    }
+  }
+
+  function inputError2() {
+    if (maxInput.value === "" || parseInt(maxInput.value) < parseInt(minInput.value)) {
       maxInput.classList.add("red-box");
       errorMessage1.classList.remove("hidden")
       updateButton.setAttribute("disabled", "disabled");
     }
     else {
-      minInput.classList.remove("red-box")
-      errorMessage.classList.add("hidden")
+      maxInput.classList.remove("red-box");
+      errorMessage1.classList.add("hidden");
       updateButton.removeAttribute("disabled");
+
     }
   }
 
-  function error2() {
-    if (maxInput.value === "" ) {
-      maxInput.classList.add("red-box");
-      errorMessage1.classList.remove("hidden");
-      updateButton.setAttribute("disabled", "disabled");
-    }
-    else if (minInput.value >= maxInput.value) {
-      maxInput.classList.add("red-box");
-      errorMessage1.classList.remove("hidden");
-      updateButton.setAttribute("disabled", "disabled");
-    }
-    else {
-      maxInput.classList.remove("red-box")
-      errorMessage1.classList.add("hidden");
-      updateButton.removeAttribute("disabled");
-    }
-  }
+function nameError1() {
+  if (challengerName1.value === ""){
+    challengerName1.classList.add("red-box");
+    errorMessage2.classList.remove("hidden")
 
-  function error3() {
-    if (challengerName1.value === "" ) {
-      challengerName1.classList.add("red-box");
-      errorMessage2.classList.remove("hidden");
-      submitButton.setAttribute("disabled", "disabled");
-    }
-    if (challengerName2.value === "" ) {
-      challengerName2.classList.add("red-box");
-      errorMessage2.classList.remove("hidden");
-      submitButton.setAttribute("disabled", "disabled");
-    }
-    else {
-      maxInput.classList.remove("red-box")
-      errorMessage1.classList.add("hidden");
-      submitButton.removeAttribute("disabled");
-    }
   }
+  else{
+    challengerName1.classList.remove("red-box");
+    errorMessage2.classList.add("hidden");
+
+  }
+}
+
+function nameError2() {
+  if (challengerName2.value === ""){
+    challengerName2.classList.add("red-box");
+    errorMessage3.classList.remove("hidden")
+  }
+  else{
+    challengerName2.classList.remove("red-box");
+    errorMessage3.classList.add("hidden");
+  }
+}
+
+function guessError1() {
+  if (player1Guess.value === ""){
+    player1Guess.classList.add("red-box");
+    errorMessage4.classList.remove("hidden")
+  }
+  else{
+    player1Guess.classList.remove("red-box");
+    errorMessage4.classList.add("hidden");
+  }
+}
+
+function guessError2() {
+  if (player2Guess.value === ""){
+    player2Guess.classList.add("red-box");
+    errorMessage5.classList.remove("hidden")
+  }
+  else{
+    player2Guess.classList.remove("red-box");
+    errorMessage5.classList.add("hidden");
+  }
+}
+
+function disabler() {
+  if (player1Guess.value === "" || player2Guess.value === "" || challengerName1.value === "" || challengerName2.value=== "") {
+    submitButton.setAttribute("disabled", "disabled");
+  }
+  else{
+    submitButton.removeAttribute("disabled")
+  }
+}
 
 updateButton.addEventListener("click", updateRange); //Come back to
 function updateRange(e) {
     e.preventDefault(e)
-    minInputDisplay.textContent = minInput.value
-    maxInputDisplay.textContent = maxInput.value
+ alek-javascript
+    minInputDisplay.textContent = minInput.value || 1;
+    maxInputDisplay.textContent = maxInput.value || 100;
+
     newNumberGenerated = Math.floor(Math.random() * (+maxInput.value - +minInput.value)) + +minInput.value;
     console.log(newNumberGenerated)
 }
@@ -123,10 +154,6 @@ function updateChallengerNamesAndGuess(e) {
 }
 
 
-/*button.addEventListener("click", createRandomNumber); // This creates a random number after the submit button is clicked
-function createRandomNumber(e) {
-    e.preventDefault(e);
-} */
 submitButton.addEventListener("click", tooHighOrLow) // This will tell player 1 if there guess is too high or low
 function tooHighOrLow(e) {
     e.preventDefault(e);
@@ -150,23 +177,7 @@ function tooHighOrLow3(e) {
     }
 }
 
- /*updateButton.addEventListener("click", updateRange); //Come back to
- function updateRange(e) {
-     e.preventDefault(e)
-     minInputDisplay.textContent = minInput.value;
-     maxInputDisplay.textContent = maxInput.value;
-   newNumberGenerated = Math.floor(Math.random() * (+maxInput.value - +minInput.value)) + +minInput.value;
-     console.log(newNumberGenerated)
- }*/
 
-// updateButton.addEventListener("click", updateRange); //Come back to
-// function updateRange(e) {
-//     e.preventDefault(e)
-//     minInputDisplay.textContent = minInput.value;
-//     maxInputDisplay.textContent = maxInput.value;
-//     newNumberGenerated = Math.floor(Math.random() * (+maxInput.value - +minInput.value)) + +minInput.value;
-//     console.log(newNumberGenerated)
-// }
 
 resetTheGame.addEventListener("click", resetGameInputs) //This will rest all input forms for the game
 
@@ -242,7 +253,7 @@ function createCard1() {
   ` + right.innerHTML;
 }
 
-submitButton.addEventListener("click", determineWinner); 
+submitButton.addEventListener("click", determineWinner);
 function determineWinner () {
   if (player2Guess.value == newNumberGenerated) {
     createCard2();
@@ -253,8 +264,3 @@ function determineWinner () {
   }
 
 }
-
-
-
- 
-

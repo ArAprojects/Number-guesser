@@ -134,6 +134,10 @@ Input {
 	margin: 5px;
 }
 
+button:disabled {
+	background-color: #D0D2D3
+}
+
 .container-challenger {
 	background-color: #FFF;
 	border:1px solid gray;
@@ -236,9 +240,12 @@ Input {
 	color: #6E6E6E;
 }
 
-
 #error,
-#error-1 {
+#error-1,
+#error-2,
+#error-3,
+#error-4,
+#error-5 {
 	font-size: 10px;
 	color: red;
 	margin-bottom: -15px;
