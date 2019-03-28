@@ -28,6 +28,7 @@ var right = document.querySelector(".section-right");
 var trackGuesses = document.querySelector(".number-of-guesses");
 
 var clearTheGame = document.querySelector(".clear-button")
+var numbGuess = 0
 
 
 
@@ -168,6 +169,8 @@ function tooHighOrLow(e) {
 submitButton.addEventListener("click", tooHighOrLow3) // This will tell player 2 if their guess is too high or low
 function tooHighOrLow3(e) {
     e.preventDefault(e);
+
+    numbGuess++
     if (player2Guess.value < newNumberGenerated) {
         tooHighOrLow2.textContent = "That's too low"
     } else if (player2Guess.value > newNumberGenerated) {
@@ -221,13 +224,14 @@ function createCard2() {
       <h3 class = "card-winner">WINNER</h3>
     </div>
     <div class="guesses-timer-clear">
-      <p><span class="number-of-guesses"></span>GUESSES</p>
+      <p><span class="number-of-guesses">${numbGuess}</span>GUESSES</p>
       <p><span class="time-to-guess-correct"></span>MINUTES</p>
       <button class="clear-card" type="button" name="button">X</button>
     </div>
 </article>
 
   ` + right.innerHTML;
+  	numbGuess = 0;
 }
 
 function createCard1() {
@@ -245,13 +249,14 @@ function createCard1() {
       <h3 class = "card-winner">WINNER</h3>
     </div>
     <div class="guesses-timer-clear">
-      <p><span class="number-of-guesses"></span>GUESSES</p>
+      <p><span class="number-of-guesses"> ${numbGuess} </span>GUESSES</p>
       <p><span class="time-to-guess-correct"></span>MINUTES</p>
       <button class="clear-card" type="button" name="button">X</button>
     </div>
 </article>
 
   ` + right.innerHTML;
+  	numbGuess = 0;
 
 }
 
