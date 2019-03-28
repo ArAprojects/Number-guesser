@@ -142,7 +142,7 @@ function updateRange(e) {
     e.preventDefault(e)
     minInputDisplay.textContent = minInput.value || 1;
     maxInputDisplay.textContent = maxInput.value || 100;
-    newNumberGenerated = Math.floor(Math.random() * parseInt(maxInput.value) + parseInt(minInput.value)); 
+    newNumberGenerated = Math.floor(Math.random() * (parseInt(maxInput.value) - parseInt(minInput.value) + 1)) + parseInt(minInput.value)
      console.log(newNumberGenerated)
 }
 
